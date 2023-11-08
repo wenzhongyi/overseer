@@ -22,7 +22,7 @@ import (
 
 var tmpBinPath = filepath.Join(os.TempDir(), "overseer-"+token()+extension())
 
-//a overseer master process
+// a overseer master process
 type master struct {
 	*Config
 	slaveID             int
@@ -176,7 +176,7 @@ func (mp *master) retreiveFileDescriptors() error {
 	return nil
 }
 
-//fetchLoop is run in a goroutine
+// fetchLoop is run in a goroutine
 func (mp *master) fetchLoop() {
 	min := mp.Config.MinFetchInterval
 	time.Sleep(min)
@@ -331,7 +331,7 @@ func (mp *master) triggerRestart() {
 	}
 }
 
-//not a real fork
+// not a real fork
 func (mp *master) forkLoop() error {
 	//loop, restart command
 	for {
